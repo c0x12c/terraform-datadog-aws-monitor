@@ -27,6 +27,7 @@ No resources.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_account_id"></a> [aws\_account\_id](#input\_aws\_account\_id) | The AWS account ID | `string` | n/a | yes |
+| <a name="input_db_name"></a> [db\_name](#input\_db\_name) | Define database name to filter by datadog monitors | `string` | `""` | no |
 | <a name="input_enabled_modules"></a> [enabled\_modules](#input\_enabled\_modules) | List of modules to enable, must be one of billing, elasticache, rds | `list(string)` | `[]` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | The environment monitored by this module | `string` | n/a | yes |
 | <a name="input_notification_slack_channel_prefix"></a> [notification\_slack\_channel\_prefix](#input\_notification\_slack\_channel\_prefix) | The prefix for Slack channels that will receive notifications and alerts | `string` | n/a | yes |

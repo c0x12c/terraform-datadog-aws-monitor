@@ -1,6 +1,12 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [1.0.0]() (2025-06-26)
+
+### Features
+
+* Add Database Name filter for monitoring and alert for that Database only. That will support to separate the notifications each database in the same account to each channel we want.
+* Bump version to 1.0.0
 
 ## [0.2.0]() (2025-06-20)
 
