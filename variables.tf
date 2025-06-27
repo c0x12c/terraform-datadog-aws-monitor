@@ -8,19 +8,10 @@ variable "environment" {
   type        = string
 }
 
-variable "db_name" {
-  description = "Define database name to filter by datadog monitors"
+variable "db_name_regex" {
+  description = "Define database name to filter by datadog monitors, it will collects multiple datase in case it is `*`"
   type        = string
-  default     = ""
-
-  validation {
-    # This condition uses a ternary operator to check:
-    # IF 'rds' is in the enabled_modules list, THEN db_name must not be an empty string.
-    # ELSE (if 'rds' is not enabled), the condition is always true, so no validation is enforced.
-    condition     = contains(var.enabled_modules, "rds") ? var.db_name != "" : true
-    error_message = "The 'db_name' variable must be set when the 'rds' module is enabled."
-  }
-
+  default     = "*"
 }
 
 variable "notification_slack_channel_prefix" {
