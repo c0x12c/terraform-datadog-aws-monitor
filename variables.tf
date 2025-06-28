@@ -8,6 +8,12 @@ variable "environment" {
   type        = string
 }
 
+variable "db_name_regex" {
+  description = "Define database name to filter by datadog monitors, it will collects multiple datase in case it is `*`"
+  type        = string
+  default     = "*"
+}
+
 variable "notification_slack_channel_prefix" {
   description = "The prefix for Slack channels that will receive notifications and alerts"
   type        = string
