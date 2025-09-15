@@ -37,7 +37,7 @@ variable "enabled_modules" {
   default     = []
 
   validation {
-    condition     = alltrue([for module_name in var.enabled_modules : contains(["billing", "elasticache", "rds"], module_name)])
+    condition     = alltrue([for module_name in var.enabled_modules : contains(["billing", "elasticache", "rds", "airflow", "emr", "kinesis"], module_name)])
     error_message = "Invalid module name, must be one of billing, elasticache, rds"
   }
 }
