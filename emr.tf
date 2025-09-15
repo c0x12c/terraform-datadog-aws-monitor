@@ -19,7 +19,7 @@ locals {
       title_tags     = "[Job failed] [Spark]"
       title          = "Spark Job Failures is detected."
 
-      query_template = "sum($${timeframe}):sum:aws.emrserverless.failed_jobs{aws_account:${module.config_aws.account_id}} > $${threshold_critical}"
+      query_template = "sum($${timeframe}):sum:aws.emrserverless.failed_jobs{environment:${var.environment}} > $${threshold_critical}"
       query_args = {
         timeframe = "last_1h"
       }

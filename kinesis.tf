@@ -19,7 +19,7 @@ locals {
       priority_level = 1
       title_tags     = "[Consumer Lag] [Kinesis]"
       title          = "Kinesis Consumer Lag is high."
-      query_template = "max($${timeframe}):max:aws.kinesis.get_records_iterator_age{aws_account:${module.config_aws.account_id}} > $${threshold_critical}"
+      query_template = "max($${timeframe}):max:aws.kinesis.get_records_iterator_age{environment:${var.environment}} > $${threshold_critical}"
       query_args = {
         timeframe = "last_1h"
       }
@@ -32,7 +32,7 @@ locals {
       priority_level = 1
       title_tags     = "[Write Throttle] [Kinesis]"
       title          = "Kinesis Write Throttle is high."
-      query_template = "sum($${timeframe}):sum:aws.kinesis.write_provisioned_throughput_exceeded{aws_account:${module.config_aws.account_id}}.as_count() > $${threshold_critical}"
+      query_template = "sum($${timeframe}):sum:aws.kinesis.write_provisioned_throughput_exceeded{environment:${var.environment}}.as_count() > $${threshold_critical}"
       query_args = {
         timeframe = "last_1h"
       }

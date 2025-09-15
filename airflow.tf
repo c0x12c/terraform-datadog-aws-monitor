@@ -19,7 +19,7 @@ locals {
       title_tags     = "[Task failed] [Airflow]"
       title          = "Airflow Task Failures is detected."
 
-      query_template = "sum($${timeframe}):sum:aws.mwaa.task_instance_finished{aws_account:${module.config_aws.account_id}, state:failed}.as_count() > $${threshold_critical}"
+      query_template = "sum($${timeframe}):sum:aws.mwaa.task_instance_finished{environment:${var.environment}, state:failed}.as_count() > $${threshold_critical}"
       query_args = {
         timeframe = "last_1h"
       }
