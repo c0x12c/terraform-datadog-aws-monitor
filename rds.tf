@@ -107,6 +107,8 @@ locals {
         timeframe = "last_5m"
       }
 
+      override_default_message = "RDS Query Hits is high"
+
       threshold_critical          = 5000
       threshold_critical_recovery = 3000
       renotify_interval           = 60

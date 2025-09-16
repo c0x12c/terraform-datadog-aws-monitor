@@ -1,6 +1,12 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [1.1.0]() (2025-09-15)
+
+### Features
+
+* Add monitors for data services (airflow, emr, kinesis)
+
 ## [1.0.0]() (2025-06-26)
 
 ### Features
