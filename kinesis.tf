@@ -40,5 +40,17 @@ locals {
       threshold_critical = 0
       renotify_interval  = 60
     }
+    read_throttle = {
+      priority_level = 1
+      title_tags     = "[Read Throttle] [Kinesis]"
+      title          = "Kinesis Read Throttle is high."
+      query_template = "sum($${timeframe}):sum:aws.kinesis.read_provisioned_throughput_exceeded{environment:${var.environment}}.as_count() > $${threshold_critical}"
+      query_args = {
+        timeframe = "last_1h"
+      }
+
+      threshold_critical = 0
+      renotify_interval  = 60
+    }
   }
 }
