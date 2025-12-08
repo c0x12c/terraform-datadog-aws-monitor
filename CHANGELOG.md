@@ -1,6 +1,12 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [1.1.1]() (2025-12-08)
+
+### Features
+
+* Add read throttle monitor for Kinesis
+
 ## [1.1.0]() (2025-09-15)
 
 ### Features
