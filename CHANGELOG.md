@@ -1,6 +1,12 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [1.2.0]() (2026-04-13)
+
+### Features
+
+* Add MSK (Amazon Managed Streaming for Apache Kafka) monitors: broker CPU, disk usage, offline partitions, active controller count
+
 ## [1.1.1]() (2025-12-08)
 
 ### Features

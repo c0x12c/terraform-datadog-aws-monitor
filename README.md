@@ -4,6 +4,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.8 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.8.0 |
 | <a name="requirement_datadog"></a> [datadog](#requirement\_datadog) | >= 3.46.0 |
 
 ## Providers
@@ -19,6 +20,7 @@ No providers.
 | <a name="module_elasticache"></a> [elasticache](#module\_elasticache) | c0x12c/monitors/datadog | ~> 1.0.0 |
 | <a name="module_emr"></a> [emr](#module\_emr) | c0x12c/monitors/datadog | ~> 1.0.0 |
 | <a name="module_kinesis"></a> [kinesis](#module\_kinesis) | c0x12c/monitors/datadog | ~> 1.0.0 |
+| <a name="module_msk"></a> [msk](#module\_msk) | c0x12c/monitors/datadog | ~> 1.0.0 |
 | <a name="module_rds"></a> [rds](#module\_rds) | c0x12c/monitors/datadog | ~> 1.0.0 |
 
 ## Resources
