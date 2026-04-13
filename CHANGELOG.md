@@ -1,6 +1,12 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [1.2.3]() (2026-04-13)
+
+### Fixes
+
+- Fix MSK offline partitions monitor threshold validation
+
 ## [1.2.2]() (2026-04-13)
 
 ### Fixes

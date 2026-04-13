@@ -89,7 +89,7 @@ locals {
         timeframe = "last_5m"
       }
 
-      threshold_critical          = 0
+      threshold_critical          = 1
       threshold_critical_recovery = 0
       renotify_interval           = 10
       renotify_occurrences        = 5
