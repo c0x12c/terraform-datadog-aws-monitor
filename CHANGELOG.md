@@ -1,6 +1,25 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [1.3.1](https://github.com/c0x12c/terraform-modules/compare/terraform-datadog-aws-monitor/v1.3.0...terraform-datadog-aws-monitor/v1.3.1) (2026-06-12)
+
+
+### Bug Fixes
+
+* **aws-monitor:** RDS metric postgres-&gt;postgresql + MSK active-controller .maximum ([#155](https://github.com/c0x12c/terraform-modules/issues/155)) ([02c627c](https://github.com/c0x12c/terraform-modules/commit/02c627c995f63c0060eacef48d44c9052105112b))
+
+## [1.3.0](https://github.com/c0x12c/terraform-modules/compare/terraform-datadog-aws-monitor/v1.2.3...terraform-datadog-aws-monitor/v1.3.0) (2026-06-12)
+
+### Features
+
+- Add `service_name` input to filter RDS query (trace) monitors by service (default `*` = all)
+
+### Fixes
+
+- Fix RDS query monitors to use `trace.postgresql.*` (the nonexistent `trace.postgres.*` never evaluated)
+- Remove `dbinstanceidentifier` filter from RDS query (trace) monitors — APM trace metrics aren't tagged with it, so the filter dropped all data
+- Fix MSK active controller monitor to use per-broker `.maximum` (averaging across brokers always fired)
+
 ## [1.2.3]() (2026-04-13)
 
 ### Fixes

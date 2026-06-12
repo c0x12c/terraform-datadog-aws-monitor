@@ -1,6 +1,6 @@
 module "rds" {
   source  = "c0x12c/monitors/datadog"
-  version = "~> 1.0.0"
+  version = "1.0.0"
 
   notification_slack_channel_prefix = var.notification_slack_channel_prefix
   tag_slack_channel                 = var.tag_slack_channel
@@ -86,7 +86,7 @@ locals {
       title_tags     = "[High P95 latency] [RDS]"
       title          = "RDS Query has a tremendous high P95 latency"
 
-      query_template = "percentile($${timeframe}):p95:trace.postgres.query{env:${var.environment}, dbinstanceidentifier:${var.db_name_regex}} by {resource_name} > $${threshold_critical}"
+      query_template = "percentile($${timeframe}):p95:trace.postgresql.query{env:${var.environment}, service:${var.service_name}} by {resource_name} > $${threshold_critical}"
       query_args = {
         timeframe = "last_5m"
       }
@@ -102,7 +102,7 @@ locals {
       title_tags     = "[High Query Hits] [RDS]"
       title          = "RDS Query Hits is high"
 
-      query_template = "sum($${timeframe}):sum:trace.postgres.query.hits{env:${var.environment}, dbinstanceidentifier:${var.db_name_regex}}.as_count() > $${threshold_critical}"
+      query_template = "sum($${timeframe}):sum:trace.postgresql.query.hits{env:${var.environment}, service:${var.service_name}}.as_count() > $${threshold_critical}"
       query_args = {
         timeframe = "last_5m"
       }
@@ -120,7 +120,7 @@ locals {
       title_tags     = "[High Query Errors] [RDS]"
       title          = "RDS Query Errors is high"
 
-      query_template = "sum($${timeframe}):sum:trace.postgres.query.errors{env:${var.environment}, dbinstanceidentifier:${var.db_name_regex}}.as_count() > $${threshold_critical}"
+      query_template = "sum($${timeframe}):sum:trace.postgresql.query.errors{env:${var.environment}, service:${var.service_name}}.as_count() > $${threshold_critical}"
       query_args = {
         timeframe = "last_5m"
       }
